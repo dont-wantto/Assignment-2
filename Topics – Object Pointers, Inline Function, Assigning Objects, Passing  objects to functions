@@ -1,1 +1,118 @@
+Object as Pointers
+_____________________________
+1. Create a class “Factorial” with an integer variable fact. Use object as pointers to interact with
+the class member function “calculate”. Write a C++ program to calculate the factorial of a given 
+non-negative integer
+solving:
+#include<bits/stdc++.h>
+using namespace std;
+
+class Factorial{
+int fact;
+public :
+Factorial(int num){
+    fact=num;
+}
+
+int factorial(const int &n)
+{
+    return (n == 1 || n == 0) ? 1 : n * factorial(n - 1);
+}
+};
+int main(){
+    Factorial *ob;
+   
+int num;
+cout<<"enter a number = ";
+cin>>num;
+
+cout<<"the factorial of "<<num<<"is ="<<ob->factorial(num);
+return 0;
+
+}
+________________________________________________________________________________________________________________________________________________________________________________________________________________________
+2. Create a class “Student” with variables “student_name” and “student_grades”. Also add two 
+member functions to “calculateGrade” and “calculateAverage” that calculates the total grade 
+and average of grade marks respectively. Write a C++ program that calculates the average grade 
+of students and the program should pass the student object as an argument to a function to 
+compute the average grade.
+solving:
+#include<bits/stdc++.h>
+using namespace std;
+class student{
+    public:
+double grades[5];
+string name;
+void calculategrades()
+{
+double total=0;
+for(int i =0;i<5;i++){
+    total+=grades[i];
+}
+}
+void claculateavg(){
+double total=0;
+for(int i =0;i<5;i++){
+    total+=grades[i];
+}
+double avg= total/5.0;
+cout<<"the average marks of the student named"<<name<<"is ="<<avg<<endl;
+}
+double computeavg(const student &s){
+    double total=0;
+for(int i =0;i<5;i++){
+    total+=s.grades[i];
+}
+return total/5.0;
+
+}
+};
+double computeavg(const student &s){
+    double total=0;
+for(int i =0;i<5;i++){
+    total+=s.grades[i];
+}
+return total/5.0;
+
+}
+int main(){
+int t;
+cout<<"enter the num of students =";
+cin>>t;
+student st[t];
+for(int i=0;i<t;i++){
+ cout<<"enter the name of the students = ";
+ cin>>st[i].name;
+
+cout<<"enter the 5 grades of the student "<<st[i].name<<"=";
+for(int j=0;j<5;j++){
+    cin>>st[i].grades[j];
+}}
+for(int i=0;i<t;i++){
+    double ag = st[i]. computeavg(st[i]);
+    cout<<"average number of the student "<<st[i].name<<"= "<<ag<<endl;
+}
+    return 0;
+}
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
