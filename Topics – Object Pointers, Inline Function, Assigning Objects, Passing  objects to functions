@@ -95,11 +95,95 @@ for(int i=0;i<t;i++){
     return 0;
 }
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+Inline Function
+3. Write a C++ program that uses an inline function to convert temperature from Celsius to 
+Fahrenheit. In the main function, ask the user to enter the temperature in Celsius, call the inline 
+function to perform the conversion, and display the result in Fahrenheit.
+
+solve:
+#include<bits/stdc++.h>
+using namespace std;
+inline double cnvert( double d){
+    return (d*9.0/5.0)+32.0;
+}
+int main(){
+double cel,fah;
+cin>>cel;
+fah=cnvert(cel);
+cout<<fah<<endl;
+return 0;
+
+}
+
+Object Assignment
+4. Create a C++ class Point to represent a 2D point with x and y coordinates. Implement a default 
+constructor and a parameterized constructor. Create two Point objects point1 and point2 using 
+both constructors. Then, assign the values of point1 to point2 and display the coordinates of 
+both points.
+solve:
+#include <bits/stdc++.h>
+using namespace std;
+class point{
+double x,y;
+public:
+point():x(0.0),y(0.0){}
+point(double xc, double yc):x(xc),y(yc){}
+void setx(double xco){
+x=xco;
+
+}
+void sety(double yco){
+    y=yco;
+}
+double getx(){
+    return x;
+}
+double gety(){
+    return y;
+}
 
 
+};
+int main(){
+point point1;
+point point2(3.4,5.9);
+cout<<"point1 = ("<<point1.getx()<<","<<point1.gety()<<")"<<endl;
+cout<<"point2 = ("<<point2.getx()<<","<<point2.gety()<<")"<<endl;
+point2=point1;
+cout<<"after assignment = "<<endl;
+cout<<"point1 = ("<<point1.getx()<<","<<point1.gety()<<")"<<endl;
+cout<<"point2 = ("<<point2.getx()<<","<<point2.gety()<<")"<<endl;
+
+    return 0;
+}
 
 
+Object as Function Parameter
+5. Create a C++ class Rectangle to represent a rectangle with length and width. Implement a 
+function calculateArea that takes a Rectangle object as a constant reference and returns the 
+area of the rectangle. In the main function, create a Rectangle object, ask the user to enter its 
+length and width, and call the calculateArea function to display the area
+solve:
+#include <bits/stdc++.h>
+using namespace std;
+class Rectangle{
+    double length,width;
+    public:
+    Rectangle(double l, double w): length(l),width(w){}
+    double area() const{
+return length*width;
+    }};
+    int main(){
+double l,w,area;
+cout<<"enter length and width =";
+cin>>l>>w;
+Rectangle rect(l,w);
+area=rect.area();
+cout<<"the area is ="<<area;
+    
 
+    return 0;
+}
 
 
 
